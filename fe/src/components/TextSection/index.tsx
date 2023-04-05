@@ -11,7 +11,7 @@ const TextSection:React.FC<{title:string, texts:Array<string>, link?:Boolean}>  
             flexDirection:'column'
           }}
         >
-            {texts.map(text => link ? <a href={text}>{text}</a> : <Box>{text}</Box> )}
+            {texts.map(text => link ? <a className='underline decoration-blue-400' href={text}>{text}</a> : <Box>{text}</Box> )}
         </Box>
     </Box>
   )

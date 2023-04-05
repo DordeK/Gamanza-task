@@ -25,7 +25,7 @@ const University:React.FC<{data:Array<CountryType>}>  = ({data}) => {
   if(university === null) return <></>
   return (
     <>
-      <Box className='mb-5 text-xl	items-center'>
+      <Box className='mb-5 text-3xl text-center'>
         {university.name}
       </Box>
       <Box className='flex flex-row	justify-evenly	items-center mb-52'>
