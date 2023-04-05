@@ -4,7 +4,7 @@ To start app you need to:
 
 0. git clone git@github.com:DordeK/Gamanza-task.git
 1. cd gamanza-task
-2. cd be
+2. cd api
 3. npm i
 4. npm run start
 5. cd ..
