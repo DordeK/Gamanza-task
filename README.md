@@ -17,4 +17,8 @@ how i would improve project:
 
 1. add unit/cypress tests
 2. add redux support
+
+
+
+
 ![Screen Recording 2023-04-05 at 14 52 09 (1)-min](https://user-images.githubusercontent.com/69770580/230094784-704b3fb5-3020-440f-b33e-52030b606517.gif)
