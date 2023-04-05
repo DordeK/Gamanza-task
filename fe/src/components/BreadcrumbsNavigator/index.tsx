@@ -4,13 +4,13 @@ import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import {Link as RouterLink, useLocation} from 'react-router-dom';
 import Box from '@mui/material/Box';
-import Filter from 'components/Filter'
+
 const BreadcrumbsNavigator = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter(path => path);
       
     return (
-        <Box sx={{marginBottom:'20px'}}>
+        <Box className='mb-5'>
             <Breadcrumbs aria-label="breadcrumb">
             <Link underline="hover" color="inherit" to="/" component={RouterLink as any} >
                 Home
@@ -22,7 +22,7 @@ const BreadcrumbsNavigator = () => {
                         {value.replaceAll('%20', ' ')}
                     </Typography>
                 ) : (
-                    <Link underline="hover" color="inherit" to="/" component={RouterLink as any} >
+                    <Link key={value} underline="hover" color="inherit" to={pathnames.slice(0, index+1).join('/')} component={RouterLink as any} >
                         {value.replaceAll('%20', ' ')}
                     </Link>
                 );

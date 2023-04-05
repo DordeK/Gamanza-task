@@ -1,9 +1,10 @@
-import { useEffect, useState, FunctionComponent} from 'react'
+import { useEffect, useState} from 'react'
 import { GridColDef } from '@mui/x-data-grid';
-import {CountryType, SchoolType} from 'utils/api/calls'
+import {CountryType, SchoolType} from 'utils/types'
 import Box from '@mui/material/Box';
 import {useParams} from "react-router-dom";
 import Grid from 'components/Grid'
+import { useNavigate } from "react-router-dom";
 
 
 const columns: GridColDef[] = [
@@ -17,7 +18,7 @@ const columns: GridColDef[] = [
   {
     field: 'stateProvince',
     headerName: 'State/Province',
-    renderCell:({value} ) =>  <Box sx={{textAlign:'center', width: '100%'}}>{value ? value : '-'}</Box>,
+    renderCell:({value} ) =>  <Box className='text-center	w-full' >{value ? value : '-'}</Box>,
     filterable:false,
     minWidth: 150,
   },
@@ -38,6 +39,7 @@ const columns: GridColDef[] = [
 ];
 
 const Universities:React.FC<{data:Array<CountryType>}>  = ({data}) => {
+  const navigate = useNavigate();
   let { country } = useParams();
   const [universities, setUniversities] = useState<SchoolType[]>([])
   
@@ -46,28 +48,21 @@ const Universities:React.FC<{data:Array<CountryType>}>  = ({data}) => {
       d['id'] = index
       return d;
     });
+
+    if(data.length && !schoolsList){
+      navigate(`/`)
+    }
+    
     if(schoolsList){
       setUniversities(schoolsList)
     }
+    
+
   }, [data, country])
 
-  console.log({data, universities})
 
-  return (
-    <Grid filterField='name' columns={columns} rows={universities} disableRowSelectionOnClick/>
-      // <DataGrid
-      //   autoHeight
-      //   disableRowSelectionOnClick
-      //   rows={universities}
-      //   columns={columns}
-      //   disableColumnFilter
-      //   disableColumnMenu
-      //   initialState={{
-      //     pagination: { paginationModel: { pageSize: 10 } },
-      //   }}
-      //   pageSizeOptions={[10, 15, 30, 40, 50]}
-      // />
-  )
+
+  return <Grid filterField='name' columns={columns} rows={universities} onRowClick={(row: any) => navigate(`/${country}/${row.row.name}/`)}/>
 }
 
 export default Universities

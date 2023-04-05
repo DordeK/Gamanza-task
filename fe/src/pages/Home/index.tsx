@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GridColDef } from '@mui/x-data-grid';
-import {CountryType} from 'utils/api/calls'
+import {CountryType} from 'utils/types'
 import { useNavigate } from "react-router-dom";
 import Grid from 'components/Grid'
 

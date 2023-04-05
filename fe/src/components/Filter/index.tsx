@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import {CountryType} from 'utils/api/calls'
+import {CountryType} from 'utils/types'
 
 
 const Filter:React.FC<{setColumnRows:Function, rows: Array<CountryType>, filterField: string}> = ({setColumnRows, rows, filterField}) => {

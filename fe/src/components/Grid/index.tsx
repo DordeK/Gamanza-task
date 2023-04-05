@@ -1,15 +1,8 @@
 import * as React from 'react';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import {CountryType} from 'utils/api/calls'
+import { DataGrid } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import Filter from 'components/Filter'
 
-// type Props = {
-//   onRowClick?: Function,
-//   disableRowSelectionOnClick: Boolean,
-//   rows:Array<CountryType>, 
-//   columns: Array<GridColDef>
-// }
 
 const Grid: React.FC<any> = ({columns, rows, filterField, ...props}) => {
   const [columnRows, setColumnRows] = useState(rows)
