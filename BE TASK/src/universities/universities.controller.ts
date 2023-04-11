@@ -25,7 +25,6 @@ export class UniversitiesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    console.log(process.env, process.env.RMQ_URL)
     return this.universitiesService.findOne(id);
   }
 
