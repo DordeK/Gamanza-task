@@ -19,6 +19,8 @@ endpoints:
       }
   4. http://localhost:3000/universities/:(name or id) ~ Delete
   5. http://localhost:3000 ~ event name: universities ~ WS
+
+
        type Sort = {
           name?: number
           created_date?: number
