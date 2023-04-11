@@ -33,7 +33,7 @@ endpoints:
         updated_by?: string
       }
 
-      MessageBody = {
+      type MessageBody = {
         filter?: Filter[]
         sort?: Sort
         limit?: number
