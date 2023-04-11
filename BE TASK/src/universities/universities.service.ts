@@ -24,7 +24,6 @@ export class UniversitiesService {
     queue: 'deleted',
   })
   async handleDeleted(data: LogType) {
-    console.log('deleted', data);
     this.log.create(data)
     return true
   }
@@ -35,7 +34,6 @@ export class UniversitiesService {
     queue: 'updated',
   })
   async handleUpdate(data: LogType) {
-    console.log('updated', data);
     this.log.create(data)
     return true
   }
